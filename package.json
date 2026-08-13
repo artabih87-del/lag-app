@@ -1,4 +1,4 @@
-{
+ {
   "name": "lag-app",
   "private": true,
   "version": "1.0.0",
@@ -12,5 +12,9 @@
     "vite": "latest",
     "react": "latest",
     "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "latest",
+    "gh-pages": "latest"
   }
 }
