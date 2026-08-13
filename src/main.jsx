@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+ import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import "./ index.css";
+import "./index.css";
 
 const translations = {
   ar: {
@@ -22,7 +22,8 @@ const translations = {
     placeholder: "ابحث عن مشكل، حل أو مهني...",
     createPost: "شنو بغيتي تشارك؟",
     problem: "المشكل",
-    solution: "الحل"
+    solution: "الحل",
+    send: "إرسال"
   },
 
   fr: {
@@ -45,7 +46,8 @@ const translations = {
       "Recherchez un problème, une solution ou un professionnel...",
     createPost: "Que souhaitez-vous partager ?",
     problem: "Problème",
-    solution: "Solution"
+    solution: "Solution",
+    send: "Envoyer"
   },
 
   en: {
@@ -68,7 +70,8 @@ const translations = {
       "Search for a problem, solution or professional...",
     createPost: "What do you want to share?",
     problem: "Problem",
-    solution: "Solution"
+    solution: "Solution",
+    send: "Send"
   }
 };
 
@@ -134,7 +137,7 @@ function App() {
       tag: "New"
     };
 
-    setPosts([newPost, ...posts]);
+    setPosts((currentPosts) => [newPost, ...currentPosts]);
   }
 
   return (
@@ -380,7 +383,11 @@ function Home({ posts, search, t }) {
       </div>
 
       <div className="sectionHead">
-        <h2>{t.post}s</h2>
+        <h2>
+          {t.post}
+          {lang === "ar" ? "ات" : "s"}
+        </h2>
+
         <span>{filtered.length} results</span>
       </div>
 
@@ -432,6 +439,7 @@ function Discover({ t }) {
       <div className="people">
         <div>
           👤 <b>Professional</b>
+
           <small>
             Rabat · Arabic / Français
           </small>
@@ -441,6 +449,7 @@ function Discover({ t }) {
 
         <div>
           👤 <b>Service provider</b>
+
           <small>
             Casablanca · Français
           </small>
